@@ -1,5 +1,15 @@
 import json
 import os
+import re
+
+
+def extract_json(text):
+    try:
+        start = text.index('{')
+        end = text.rindex('}') + 1
+        return text[start:end]
+    except ValueError:
+        return text
 
 def load_used_names(path="data/names_generated.json"):
     if os.path.exists(path):
@@ -57,7 +67,8 @@ def generate_npc_attributes(client, story_text: str, name: str, profession_hint:
 Story:
 {story_text}
 
-Return only valid JSON:"""
+Return only JSON with keys: name, profession, personality_traits (list of strings).
+Do not add any extra text."""
 
     response = client.chat.completions.create(
         model="gpt-4o-mini",
@@ -65,11 +76,19 @@ Return only valid JSON:"""
         temperature=0.7,
         max_tokens=150,
     )
+
     content = response.choices[0].message.content.strip()
 
+    content_clean = re.sub(r"^``````$", "", content, flags=re.DOTALL).strip()
+
+    json_fragment = extract_json(content_clean)
+
+    print("DEBUG - raw model response for NPC attributes:", content)
+
     try:
-        json_data = json.loads(content)
-    except json.JSONDecodeError:
-        json_data = {}
+        json_data = json.loads(json_fragment)
+    except json.JSONDecodeError as e:
+        print("JSON Decode Error:", e)
+        json_data = {"name": name}
 
     return json_data

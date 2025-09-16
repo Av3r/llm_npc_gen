@@ -1,14 +1,14 @@
 import argparse
 import json
 from openai import OpenAI
-from story_loader import load_story
-from qna import ask_question
-from npc_generator import generate_unique_name, generate_npc_attributes
+from npc_gen.story_loader import load_story
+from npc_gen.qna import ask_question
+from npc_gen.npc_generator import generate_unique_name, generate_npc_attributes
 
-OPENAI_API_KEY = "tu_wklej_swoj_klucz_api"
+OPENAI_API_KEY = ''
 
 def interactive_mode(client, story_text):
-    print("Interactive mode started. Enter commands or 'end' to quit.")
+    print("Interactive mode started. Enter commands or 'exit' to quit.")
     print("Available commands:")
     print(" story-understanding <question>")
     print(" generate-hero")
@@ -21,8 +21,7 @@ def interactive_mode(client, story_text):
             print("\nExiting interactive mode.")
             break
 
-        if user_input.lower() in ("end", "exit", "quit"):
-            print("Exiting interactive mode.")
+        if user_input.lower() in ("exit"):
             break
 
         if user_input.startswith("story-understanding "):
@@ -31,7 +30,7 @@ def interactive_mode(client, story_text):
                 answer = ask_question(client, story_text, question)
                 print("Answer:", answer)
             else:
-                print("Please provide a question after 'story-understanding'.")
+                print("Provide a question after 'story-understanding'.")
         elif user_input == "generate-hero":
             name = generate_unique_name(client, story_text)
             print("Generated Hero Name:", name)
@@ -42,16 +41,16 @@ def interactive_mode(client, story_text):
                 print("Character Details:")
                 print(json.dumps({"name": name, **details}, indent=2, ensure_ascii=False))
             else:
-                print("Please provide a name after 'generate-details'.")
+                print("Provide a name after 'generate-details'.")
         else:
             print("Unknown command. Available commands:")
             print(" story-understanding <question>")
             print(" generate-hero")
             print(" generate-details <name>")
-            print(" end")
+            print(" exit")
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="NPC Generation System CLI")
+    parser = argparse.ArgumentParser(description="NPC Generation System")
     parser.add_argument("--story-file", type=str, default="data/fantasy.md", help="Path to story file")
     parser.add_argument("--interactive", action="store_true", help="Start interactive mode")
     parser.add_argument("--story-understanding", type=str, help="Ask a question about the story")
@@ -60,10 +59,6 @@ def parse_args():
     return parser.parse_args()
 
 def main():
-    OPENAI_API_KEY = ''
-    # if not OPENAI_API_KEY or "tu_wklej_swoj_klucz_api" in OPENAI_API_KEY:
-    #     print("ERROR: Set your OpenAI API key in OPENAI_API_KEY variable inside cli.py")
-    #     return
 
     args = parse_args()
     client = OpenAI(api_key=OPENAI_API_KEY)

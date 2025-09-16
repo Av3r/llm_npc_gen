@@ -1,0 +1,162 @@
+################## 1. run:
+
+Running command: main.py --story-file data/fantasy.md --story-understanding What factions exist?
+Output:
+Story loaded from data/fantasy.md
+Answer: The factions that exist in the Sundered Realm are:
+
+1. **The Ironhold Clans** - Known for their rejection of magic and emphasis on steel and stone, they have retreated to the mountains and built fortress-cities.
+
+2. **The Verdant Covenant** - They inhabit the Deepwood, where nature has grown in unusual ways due to the Sundering, and they focus on harmony and adaptation.
+
+3. **The Ashward Collective** - Located in the blast lands near the original catastrophe, they are survivors who create settlements from salvage and the remnants of the old world.
+
+4. **The Ethereal Schism** - Comprising those most affected by wild magic, they have established sanctuaries in the spaces between territories, seeking to understand the nature of the Sundering.
+
+5. **The Remnant Assembly** - They hold the coastal strongholds and claim to be the true heirs of Aethermoor, maintaining old ceremonies and hierarchies while clinging to the legacy of the fallen kingdom.
+
+----------------------------------------
+Running command: main.py --story-file data/fantasy.md --generate-hero
+Output:
+Story loaded from data/fantasy.md
+Generated Hero Name: Kaelith Varunaris
+
+----------------------------------------
+Running command: main.py --story-file data/fantasy.md --generate-details Aldric Stormwind
+Output:
+Story loaded from data/fantasy.md
+Character Details:
+{
+  "name": "Aldric Stormwind"
+}
+
+
+
+
+#####################  2. run:
+
+Running command: main.py --story-file data/fantasy.md --story-understanding What factions exist?
+Output:
+Story loaded from data/fantasy.md
+Answer: The factions that exist in the Sundered Realm are:
+
+1. **The Ironhold Clans** - Known for their rejection of magic and their embrace of steel and stone, they have built fortress-cities in the mountains.
+
+2. **The Verdant Covenant** - They inhabit the Deepwood, embracing nature's growth after the Sundering and promoting harmony and adaptation.
+
+3. **The Ashward Collective** - Survivors who settled in the ash-covered blast lands, they create new settlements from the remnants of the old world.
+
+4. **The Ethereal Schism** - Comprising those most affected by wild magic, they seek to understand the nature of the Sundering and established sanctuaries in the spaces between territories.
+
+5. **The Remnant Assembly** - They hold coastal strongholds and claim to be the true heirs of Aethermoor, maintaining old ceremonies and hierarchies.
+
+----------------------------------------
+Running command: main.py --story-file data/fantasy.md --generate-hero
+Output:
+Story loaded from data/fantasy.md
+Generated Hero Name: Elysara Nyxveil
+
+----------------------------------------
+Running command: main.py --story-file data/fantasy.md --generate-details Aldric Stormwind
+Output:
+Story loaded from data/fantasy.md
+
+```
+Character Details:
+{
+  "name": "Aldric Stormwind"
+}
+
+
+
+
+########################## 3. run:
+
+Output:
+Story loaded from data/fantasy.md
+Answer: The factions that exist in the Sundered Realm are:
+
+1. **The Ironhold Clans** - Known for their rejection of magic and their embrace of steel and stone, they have built fortress-cities in the mountains.
+
+2. **The Verdant Covenant** - They reside in the Deepwood and focus on harmony with nature, adapting to the changes brought by the Sundering.
+
+3. **The Ashward Collective** - Survivors who live in the blast lands, they salvage and rebuild from the remnants of the old world.
+
+4. **The Ethereal Schism** - Comprising those most affected by wild magic, they seek understanding of the Sundering and have established sanctuaries in the spaces between territories.
+
+5. **The Remnant Assembly** - Claiming to be the true heirs of Aethermoor, they maintain old traditions and hierarchies from the fallen kingdom.
+
+----------------------------------------
+Running command: main.py --story-file data/fantasy.md --generate-hero
+Output:
+Story loaded from data/fantasy.md
+Generated Hero Name: Lyrian Thalorwyn
+
+----------------------------------------
+Running command: main.py --story-file data/fantasy.md --generate-details Aldric Stormwind
+Output:
+Story loaded from data/fantasy.md
+
+Character Details:
+{
+  "name": "Aldric Stormwind"
+}
+
+
+
+
+#################    4. run:
+
+Output:
+Story loaded from data/fantasy.md
+Answer: The factions that exist in the Sundered Realm are:
+
+1. **The Ironhold Clans** - Known for their rejection of magic and their embrace of steel and stone, they reside in fortress-cities within the mountains.
+
+2. **The Verdant Covenant** - They live in the Deepwood, focusing on harmony with nature and adaptation to the changes brought by the Sundering.
+
+3. **The Ashward Collective** - Survivors who inhabit the blast lands near the original catastrophe, they build their settlements from salvage and determination.
+
+4. **The Ethereal Schism** - Comprising those most affected by the wild magic of the Sundering, they seek understanding of the broken world and established sanctuaries in the spaces between territories.
+
+5. **The Remnant Assembly** - Claiming to be the true heirs of fallen Aethermoor, they maintain old ceremonies and hierarchies from the previous kingdom.
+
+----------------------------------------
+Running command: D:\Programing\Python\llm_npc_gen\.venv\Scripts\python.exe main.py --story-file data/fantasy.md --generate-hero
+Output:
+Story loaded from data/fantasy.md
+Generated Hero Name: Thalindra Ashenvale
+
+----------------------------------------
+Running command: D:\Programing\Python\llm_npc_gen\.venv\Scripts\python.exe main.py --story-file data/fantasy.md --generate-details Aldric Stormwind
+Output:
+Story loaded from data/fantasy.md
+
+Character Details:
+{
+  "name": "Aldric Stormwind",
+  "profession": "Scholar of the Ethereal Schism",
+  "personality_traits": [
+    "curious",
+    "empathetic",
+    "cautious",
+    "insightful",
+    "idealistic"
+  ]
+}
+
+
+
+
+
+#################################
+generated names:
+
+names_generated.json
+
+[
+  "Thalindra Ashenvale",
+  "Elysara Nyxveil",
+  "Lyrian Thalorwyn",
+  "Kaelith Varunaris"
+]

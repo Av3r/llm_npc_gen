@@ -5,9 +5,9 @@ def run_test_commands():
     story_file = "data/fantasy.md"
 
     commands = [
-        [sys.executable, "npc_gen/cli.py", "--story-file", story_file, "--story-understanding", "What factions exist?"],
-        [sys.executable, "npc_gen/cli.py", "--story-file", story_file, "--generate-hero"],
-        [sys.executable, "npc_gen/cli.py", "--story-file", story_file, "--generate-details", "Aldric Stormwind"]
+        [sys.executable, "main.py", "--story-file", story_file, "--story-understanding", "What factions exist?"],
+        [sys.executable, "main.py", "--story-file", story_file, "--generate-hero"],
+        [sys.executable, "main.py", "--story-file", story_file, "--generate-details", "Aldric Stormwind"]
     ]
 
     for cmd in commands:
